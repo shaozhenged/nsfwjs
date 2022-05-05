@@ -37,7 +37,9 @@ app.post('/nsfw', upload.single("image"), async (req, res) => {
 })
 
 const load_model = async () => {
-  _model = await nsfw.load()
+  _model = await nsfw.load('file://../example/nsfw_demo/public/model/', { size: 299 })
+  //_model = await nsfw.load('D:/work/Src/nsfwjs/example/nsfw_demo/public/model/')
+  
 }
 
 // Keep the model in memory, make sure it's loaded only once
